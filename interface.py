@@ -13,19 +13,6 @@ conexao = sqlite3.connect('contador.db')
 cursor = conexao.cursor()
 
 
-def atualizar_banco():
-    Browser("101", "UC")
-    Browser("102", "UJ")
-    popupBonusWindow = Tk()
-    popupBonusWindow.wm_title("Atualizado")
-    labelBonus = Label(
-        popupBonusWindow, text="Dados do banco atualizados com sucesso!", justify=CENTER)
-    labelBonus.grid(row=0, column=0, padx=10)
-    B1 = ttk.Button(popupBonusWindow, text="Okay",
-                    command=popupBonusWindow.destroy)
-    B1.grid(row=1, column=0, pady=10)
-
-
 class Interface:
     def __init__(self):
         self.popupBonusWindow = None
@@ -69,7 +56,7 @@ class Interface:
                       pady=10,)
 
         botao_atualizar = Button(
-            janela, text="Atualizar Banco", command=atualizar_banco)
+            janela, text="Atualizar Banco", command=self.atualizar_banco)
         botao_atualizar.grid(row=4, column=0, padx=10,
                              pady=10, ipadx=80, columnspan=2)
 
@@ -146,6 +133,19 @@ class Interface:
     def foco_janela(self):
         self.janela.focus_force()
         self.popupBonusWindow.destroy()
+
+    @staticmethod
+    def atualizar_banco():
+        Browser("101", "UC")
+        Browser("102", "UJ")
+        popupBonusWindow = Tk()
+        popupBonusWindow.wm_title("Atualizado")
+        labelBonus = Label(
+            popupBonusWindow, text="Dados do banco atualizados com sucesso!", justify=CENTER)
+        labelBonus.grid(row=0, column=0, padx=10)
+        B1 = ttk.Button(popupBonusWindow, text="Okay",
+                        command=popupBonusWindow.destroy)
+        B1.grid(row=1, column=0, pady=10)
 
 
 interface = Interface()
