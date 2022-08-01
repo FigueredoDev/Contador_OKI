@@ -13,6 +13,6 @@ Software desenvolvido para buscar na pagina web das impressoras C911MDI, o conta
 ```sh
 pip install -r requirements.txt
 ```
-![alt text](https://github.com/FigueredoDev/Contador_OKI/main/img.png)
+![alt text](https://github.com/FigueredoDev/Contador_OKI/blob/master/img.png)
 
 Este software foi desenvolvido a titulo de estudo e trabalho, fique a vontade para uso do mesmo e adaptaçao para sua necessidade.
